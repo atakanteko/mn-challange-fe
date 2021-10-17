@@ -1,6 +1,7 @@
 import axios from 'axios'
+require('dotenv').config();
 
-const baseUrl = 'api/todos' //proxyden buluyor
+const baseUrl = `${process.env.REACT_APP_NOT_SECRET_CODE}/api/todos` 
 
 
 const getAll = () => {

@@ -2,10 +2,10 @@ import React, { useState,useEffect  } from 'react'
 import './index.css'
 import List from './components/List';
 import todoService from './services/todos'
+import ToDoForm from './components/ToDoForm';
 
 const  App = () => {
   const [todos, setTodos] = useState([])
-  const [newTodo, setNewTodo] = useState('a new todo...')
 
   useEffect(() => {
     todoService
@@ -15,23 +15,7 @@ const  App = () => {
       })
   }, [])
 
-  const addToDo = (event) => {
-    event.preventDefault()
-    const toDoObject = {
-      content: newTodo,
-      id: todos.length + 1,
-    }
-
-    todoService
-    .create(toDoObject)
-    .then(returnedTodo => {
-      setTodos(todos.concat(returnedTodo))
-      setNewTodo('')
-    })
-  }
-  const handleTodoChange = (event) => {
-    setNewTodo(event.target.value)
-  }
+  
 
   return (
     <div className="page-content page-container" id="page-content">
@@ -42,15 +26,7 @@ const  App = () => {
                       <div className="card-body">
                           <h4 className="card-title">Moda Nisa Assignment - ToDo List</h4>
 
-                          <form onSubmit={addToDo} >
-                            <div className="add-items d-flex">                     
-                                <input type="text" 
-                                      className="form-control todo-list-input" 
-                                      onChange={handleTodoChange}
-                                      value={newTodo} /> 
-                                <button className="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
-                            </div>
-                          </form> 
+                          <ToDoForm setTodos={setTodos} todos={todos}/>    
 
                           <div className="list-wrapper">
                             <ul className="d-flex flex-column-reverse todo-list">

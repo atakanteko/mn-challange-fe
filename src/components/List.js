@@ -2,7 +2,7 @@ import React from 'react'
 
 const List = ({todo}) => {
     return(
-        <li>
+        <li className="todo">
             {todo}
         </li>
     )
