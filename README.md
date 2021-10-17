@@ -33,7 +33,7 @@ I used ReactJS for this part of the app.
      
 
 
-## Testing React apps
+## Testing React Apps
 ### Cypress Folder 
 There are many different ways of testing React applications.  So far I have tested the backend as a whole on an API level using integration tests, and tested some frontend components using unit tests.
 
@@ -75,5 +75,16 @@ In this file, in addition to Jest, I also need another testing library that will
 
 The test in this file verifies that the component renders the contents of the todo.
 
+### src/services Folder
 
+It contains the HTTP request codes required to communicate with the server side. 
+
+### src/components Folder
+##### List.js
+This file renders a todo as a single list item.
+##### ToDoForm.js
+It contains the form element used to retrieve a to-do element from the user.
+
+### src/index.js
+Root file that render whole react application.
 
