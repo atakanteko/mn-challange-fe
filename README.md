@@ -4,7 +4,7 @@
 I used ReactJS for this part of the app.
 
 
-## Structure of Backend Application
+## Structure of Frontend Application
 ### Project Structure
 
 
@@ -12,6 +12,12 @@ I used ReactJS for this part of the app.
     ├── app.js
     ├── Dockerfile
     ├── Procfile
+    ├── k8s
+	    └──client-cluster-ip-service.yml
+	    └──client-deployment.yml
+	    └──ingress-service.yml
+	    └──server-cluster-ip-service.yml
+	    └──server-deployment.yml
     ├── cypress
         ├── integration
 	        └──todo_app.spec.js
@@ -87,4 +93,37 @@ It contains the form element used to retrieve a to-do element from the user.
 
 ### src/index.js
 Root file that render whole react application.
+
+
+
+## Docker and Kubernetes
+One of the tasks I had to do for this challenge was to use docker and kubernetes. I didn't know anything about these topics prior to this challenge. But by googling I managed to do this on local computer.
+
+In order to validate that my containerized application works well on Kubernetes, I'll use Docker Desktop’s built in Kubernetes environment right on our development machine to deploy my application.
+
+All containers in Kubernetes are scheduled as _pods_, which are groups of co-located containers that share some resources. Furthermore, in a realistic application we almost never create individual pods; instead, most of our workloads are scheduled as _deployments_, which are scalable groups of pods maintained automatically by Kubernetes. Lastly, all Kubernetes objects can and should be described in manifests called _Kubernetes YAML_ files. These YAML files describe all the components and configurations of your Kubernetes app, and can be used to easily create and destroy your app in any Kubernetes environment. [(Source)](https://docs.docker.com/get-started/kube-deploy/) 
+
+There are 2 Kubernetes YAML in my application.
+ - **client-deployment.yml** 
+ - **server-deployment.yml**
+
+A  `Deployment`, describing a scalable group of identical pods. In this case, you’ll get just one  `replica`, or copy of your pod, and that pod (which is described under the  `template:`  key) has just one container in it, based off of your  `bulletinboard:1.0`  image from the previous step in this tutorial. [(Source)](https://docs.docker.com/get-started/kube-deploy/) 
+
+Also, notice that while Kubernetes YAML can appear long and complicated at first, it almost always follows the same pattern:
+
+-   The  `apiVersion`, which indicates the Kubernetes API that parses this object
+-   The  `kind`  indicating what sort of object this is
+-   Some  `metadata`  applying things like names to your objects
+-   The  `spec`  specifying all the parameters and configurations of your object. [(Source)](https://docs.docker.com/get-started/kube-deploy/) 
+
+##### ingress-service.yml
+ingress-nginx is an Ingress controller for Kubernetes using  [NGINX](https://www.nginx.org/)  as a reverse proxy and load balancer.  [(Source)](https://github.com/kubernetes/ingress-nginx)
+
+Below are the links I used in this part of the application.
+[Codeching](https://www.youtube.com/watch?v=OVVGwc90guo&t=1220s)
+[doc.docker](https://docs.docker.com/get-started/kube-deploy/)
+[DigitalGuide](https://www.ionos.com/digitalguide/server/know-how/setting-up-a-docker-repository/)
+[Nginx](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide)
+
+
 
