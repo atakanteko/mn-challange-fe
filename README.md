@@ -120,10 +120,10 @@ Also, notice that while Kubernetes YAML can appear long and complicated at first
 ingress-nginx is an Ingress controller for Kubernetes using  [NGINX](https://www.nginx.org/)  as a reverse proxy and load balancer.  [(Source)](https://github.com/kubernetes/ingress-nginx)
 
 Below are the links I used in this part of the application.
-[Codeching](https://www.youtube.com/watch?v=OVVGwc90guo&t=1220s)
-[doc.docker](https://docs.docker.com/get-started/kube-deploy/)
-[DigitalGuide](https://www.ionos.com/digitalguide/server/know-how/setting-up-a-docker-repository/)
-[Nginx](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide)
+ - [Codeching](https://www.youtube.com/watch?v=OVVGwc90guo&t=1220s)
+ - [doc.docker](https://docs.docker.com/get-started/kube-deploy/)
+ - [DigitalGuide](https://www.ionos.com/digitalguide/server/know-how/setting-up-a-docker-repository/)
+ - [Nginx](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide)
 
 
 
