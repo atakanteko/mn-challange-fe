@@ -125,5 +125,10 @@ Below are the links I used in this part of the application.
  - [DigitalGuide](https://www.ionos.com/digitalguide/server/know-how/setting-up-a-docker-repository/)
  - [Nginx](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide)
 
+<img src="https://github.com/atakanteko/mn-challange-fe/blob/main/readme_img/D1.png" width="500" height="400">
+<img src="https://github.com/atakanteko/mn-challange-fe/blob/main/readme_img/D2.png" width="500" height="400">
+<img src="https://github.com/atakanteko/mn-challange-fe/blob/main/readme_img/D3.png" width="500" height="400">
+
+
 
 
