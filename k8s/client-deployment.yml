@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: modanisa-cha:0.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_NOT_SECRET_CODE
+              value: http://192.168.1.40
+            - name: REACT_APP_PORT
+              value: "3000"
+            

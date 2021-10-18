@@ -15,6 +15,4 @@ describe('Todo app', function() {
         cy.get('input').type('another todo cypress')
         cy.contains('Add').click()
       })
-
-
   })

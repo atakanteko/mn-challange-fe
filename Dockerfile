@@ -10,10 +10,9 @@ USER node
 
 WORKDIR /home/node/app
 
-RUN npm install
+RUN npm install --only=prod
 
 RUN npm build
-
 
 # Open desired port
 EXPOSE 3000
