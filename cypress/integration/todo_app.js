@@ -1,7 +1,7 @@
 describe('Todo app', function() {
 
   beforeEach(function() {
-    cy.request('GET', 'https://mnchallenge.herokuapp.com/reset')
+    cy.request('GET', 'https://mnchallenge.herokuapp.com/api/testing/reset')
     const todo = {
       content:"Hello, this is a new content."
     }
